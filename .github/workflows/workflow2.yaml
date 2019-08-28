@@ -1,0 +1,11 @@
+workflow "Testing Something" {
+  on = "push"
+  resolves = ["Something"]
+}
+
+action "Something" {
+  uses = "./action-b"
+  env = {
+    RANDOM_VAR = "asdf"
+  }
+  args = "$RANDOM_VAR"
